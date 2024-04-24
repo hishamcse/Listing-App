@@ -1,18 +1,21 @@
 package app.models;
 
+import java.util.Date;
+import java.util.List;
+
 public class Movie implements Comparable<Movie> {
 
     private final String title;
-    private final String cast;
+    private final List<String> cast;
     private final String category;
-    private final String releaseDate;
+    private final Date releaseDate;
     private final double budget;
 
-    public Movie(String title, String cast, String category, String releaseDate, double budget) {
+    public Movie(String title, List<String> cast, String category, String releaseDate, double budget) {
         this.title = title;
         this.cast = cast;
         this.category = category;
-        this.releaseDate = releaseDate;
+        this.releaseDate = new Date(releaseDate);
         this.budget = budget;
     }
 
@@ -20,7 +23,7 @@ public class Movie implements Comparable<Movie> {
         return title;
     }
 
-    public String getCast() {
+    public List<String> getCast() {
         return cast;
     }
 
@@ -29,7 +32,7 @@ public class Movie implements Comparable<Movie> {
     }
 
     public String getReleaseDate() {
-        return releaseDate;
+        return releaseDate.toString();
     }
 
     public double getBudget() {
