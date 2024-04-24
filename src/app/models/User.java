@@ -6,7 +6,7 @@ import java.util.List;
 public class User {
 
     private final String email;
-    private List<Movie> favorites;
+    private final List<Movie> favorites;
 
     public User(String email) {
         this.email = email;
@@ -33,7 +33,7 @@ public class User {
         return favorites.contains(movie);
     }
 
-    public String details() {
+    public String userDetails() {
         StringBuilder sb = new StringBuilder();
         sb.append("User: ").append(email).append("\n");
         for (Movie movie : favorites) {

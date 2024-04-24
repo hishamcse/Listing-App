@@ -44,8 +44,13 @@ public class Movie implements Comparable<Movie> {
         return this.title.compareTo(other.title);
     }
 
-    @Override
-    public String toString() {
-        return title + " (" + releaseDate + ")";
+    public String movieDetails() {
+        StringBuilder sb = new StringBuilder();
+        sb.append("Title: ").append(title).append("\n");
+        sb.append("Cast: ").append(cast).append("\n");
+        sb.append("Category: ").append(category).append("\n");
+        sb.append("Release Date: ").append(releaseDate).append("\n");
+        sb.append("Budget: ").append(budget).append("\n");
+        return sb.toString();
     }
 }
