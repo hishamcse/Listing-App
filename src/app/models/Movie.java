@@ -1,6 +1,6 @@
 package app.models;
 
-import java.util.Date;
+import java.time.LocalDate;
 import java.util.List;
 
 public class Movie implements Comparable<Movie> {
@@ -8,14 +8,14 @@ public class Movie implements Comparable<Movie> {
     private final String title;
     private final List<String> cast;
     private final String category;
-    private final Date releaseDate;
+    private final LocalDate releaseDate;
     private final double budget;
 
     public Movie(String title, List<String> cast, String category, String releaseDate, double budget) {
         this.title = title;
         this.cast = cast;
         this.category = category;
-        this.releaseDate = new Date(releaseDate);
+        this.releaseDate = LocalDate.parse(releaseDate); // LocalDate.parse("2021-01-01")
         this.budget = budget;
     }
 
