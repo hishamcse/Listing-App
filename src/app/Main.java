@@ -2,6 +2,7 @@ package app;
 
 import app.services.MovieService;
 import app.services.UserService;
+import dataLoader.MovieLoader;
 
 import java.util.Scanner;
 
@@ -12,6 +13,8 @@ public class Main {
         Scanner scanner = new Scanner(System.in);
         UserService userService = new UserService();
         MovieService movieService = new MovieService();
+
+        MovieLoader.loadMoviesFromFile("src/data/movies.csv", movieService);
 
         System.out.println("Welcome to the Movie App!");
 

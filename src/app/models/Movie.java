@@ -45,6 +45,11 @@ public class Movie implements Comparable<Movie> {
     }
 
     public String movieDetails() {
+        return this.toString();
+    }
+
+    @Override
+    public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("Title: ").append(title).append("\n");
         sb.append("Cast: ").append(cast).append("\n");

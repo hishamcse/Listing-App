@@ -36,6 +36,7 @@ public class User {
     public String userDetails() {
         StringBuilder sb = new StringBuilder();
         sb.append("User: ").append(email).append("\n");
+        sb.append("Favorite Movies: ").append("\n");
         for (Movie movie : favorites) {
             sb.append(movie).append("\n");
         }
