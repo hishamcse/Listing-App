@@ -14,11 +14,10 @@ public class MovieLoader {
     public static void loadMoviesFromFile(String filename, MovieService movieService) {
         try (BufferedReader br = new BufferedReader(new FileReader(filename))) {
             String line;
-            br.readLine(); // This skips the header line
+            br.readLine();
             while ((line = br.readLine()) != null) {
                 String[] values = line.split(",");
                 if (values.length == 5) {
-                    // Remove quotes and split cast by semicolon
                     String[] cast = values[1].replaceAll("\"", "").split(";");
                     List<String> castList = Arrays.asList(cast);
                     Movie movie = new Movie(values[0], castList, values[2], values[3], parseBudget(values[4]));

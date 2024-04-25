@@ -31,14 +31,6 @@ public class Movie implements Comparable<Movie> {
         return category;
     }
 
-    public String getReleaseDate() {
-        return releaseDate.toString();
-    }
-
-    public double getBudget() {
-        return budget;
-    }
-
     @Override
     public int compareTo(Movie other) {
         return this.title.compareTo(other.title);
