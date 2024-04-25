@@ -44,6 +44,10 @@ public class UserService {
             throw new IllegalArgumentException("User not found");
         }
 
+        if(user.getFavorites().contains(movie)) {
+            throw new IllegalArgumentException("Movie already in favorites");
+        }
+
         user.addFavorite(movie);
     }
 
